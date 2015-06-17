@@ -1,0 +1,6 @@
+node_modules
+test/temp
+bower_components
+.tmp
+pre-release
+release

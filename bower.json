@@ -1,0 +1,23 @@
+{
+  "name": "top-page",
+  "version": "0.0.0",
+  "description": "Beanbrothers season3 top page",
+  "authors": [
+    "zeakd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.1",
+    "requirejs": "~2.1.18",
+    "bootstrap": "~3.3.4",
+    "modernizr": "~2.8.3"
+  }
+}
