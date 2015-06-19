@@ -44,10 +44,12 @@ gulp.task('html', ['clean'], function() {
 
 gulp.task('less', ['clean'], function() {
     return gulp.src([
-        config.app + '/styles/less/bootstrap-beanbrothers-theme.less',
-        config.app + '/styles/less/main.less'
+        config.app + '/styles/less/bootstrap-beanbrothers-theme.less'
     ])
         .pipe(gp.less())
+        .pipe(gp.rename({
+            basename: 'style'
+        }))
         .pipe(gulp.dest(config.preRelease + '/styles'))
         .pipe(gp.minifyCss())
         .pipe(gulp.dest(config.release + '/styles'))
@@ -55,9 +57,11 @@ gulp.task('less', ['clean'], function() {
 });
 gulp.task('less:dev', ['clean:tmp'], function(){
     return gulp.src([
-        config.app + '/styles/less/bootstrap-beanbrothers-theme.less',
-        config.app + '/styles/less/main.less'
+        config.app + '/styles/less/bootstrap-beanbrothers-theme.less'
     ])
+        .pipe(gp.rename({
+            basename: 'style'
+        }))
     //return gulp.src(config.app + '/styles/*.less')
         .pipe(gp.less({
             //paths: [config.app + '/styles/less']

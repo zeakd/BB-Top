@@ -19,12 +19,15 @@ define([
         },
         routes: {
             //blog :              blog,
-            class:              "handleClass"
+            class:              "handleClass",
+            product:            "handleProduct"
         },
         handleClass : function(){
             this.fetchTemplate('class', function(){
                 $('#paper').html(JST['class'])
             });
+        },
+        handleProduct: function(){
 
         },
         fetchTemplate: function(path, done) {
@@ -37,7 +40,6 @@ define([
                 if (_.isFunction(done)) {
                     done(JST[path]);
                 }
-
                 return def.resolve(JST[path]);
             }
 
@@ -67,7 +69,6 @@ define([
             // Ensure a normalized return value (Promise)
             return def.promise();
         }
-
     });
 
     return AppRouter;

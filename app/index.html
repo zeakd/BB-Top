@@ -9,8 +9,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <!--<link rel="stylesheet" href="styles/normalize.min.css">-->
-        <link rel="stylesheet" href="styles/bootstrap-beanbrothers-theme.css">
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/style.css">
 
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="/bower_components/modernizr/modernizr.js"></script>
@@ -69,7 +68,6 @@
                     </ul>
 
                 </div>
-
                 <div id = 'mobile-nav' class = "nav navbar-nav collapse container-fluid hidden-md hidden-lg">
                     <div class = 'container'>
                         <ul class = 'row nav navbar-nav'>
@@ -102,7 +100,105 @@
 
                 </div>
             </header>
-            <footer id = 'footer' class = "navbar navbar-fixed-bottom">
+            <div class = 'main'>
+                <div id = "banner" class = "swiper-container">
+                    <ul class = "swiper-wrapper wrapper">
+                        <li class = "banner-item bg1 swiper-slide">
+                            <a href = '#'>
+                                <img class = 'bg cover' src = 'images/banner_01.jpg'>
+                                <img class = 'text cover' src = 'images/banner_01_txt.png'>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id = "banner-area"></div>
+                <div id = "paper">
+                    <div class = 'wrapper container'>
+                        <div id = "news">
+                            <ul class = "row">
+                                <li class = 'item-wrapper col-xs-12 col-sm-4'>
+                                    <a class = 'news-item'>
+                                        <img class = 'bg cover' src = 'images/news_01.jpg'>
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/news_01_txt.png">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class = 'item-wrapper col-xs-12 col-sm-4'>
+                                    <a class = 'news-item'>
+                                        <img class = 'bg cover' src = 'images/news_02.jpg'>
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/news_02_txt.png">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class = 'item-wrapper col-xs-12 col-sm-4'>
+                                    <a class = 'news-item'>
+                                        <img class = 'bg cover' src = 'images/news_03.jpg'>
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/news_03_txt.png">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id = "hole">
+                            <div class = 'hole-bg'>
+                                <img src = 'images/hole-bg.jpg'>
+                            </div>
+                            <img class = 'hole-text' src = "images/hole.png">
+                        </div>
+                        <div id = "bulletin">
+                            <ul class = "row">
+                                <li class = 'col-md-9 col-sm-9 col-xs-12'>
+                                    <a class = 'bulletin-item' style = "background-image:url(images/bulletin_001.jpg);">
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/001_small.png">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class = 'col-md-3 col-sm-3 col-xs-6'>
+                                    <a class = 'bulletin-item' style = "background-image:url(images/bulletin_002.jpg);">
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/002_small.png">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class = 'col-md-4 col-sm-4 col-xs-6'>
+                                    <a class = 'bulletin-item' style = "background-image:url(images/bulletin_003.jpg);">
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/003_small.png">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class = 'col-md-4 col-sm-4 col-xs-6'>
+                                    <a class = 'bulletin-item' style = "background-image:url(images/bulletin_004.jpg);">
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/004_small.png">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class = 'col-md-4 col-sm-4 col-xs-6'>
+                                    <a class = 'bulletin-item' style = "background-image:url(images/bulletin_005.jpg);">
+                                        <div class = 'text-wrapper'>
+                                            <img class = 'text cover' src = "images/005_small.png">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id = "insta">
+                            <header class = 'insta-header'>
+                                <h2>#BEAN_BROTHERS</h2>
+                            </header>
+                            <!--<img class = 'loading' src = 'images/loading.gif'>-->
+                        </div>
+                    </div>
+                </div>
+                <div id = "footer-area"></div>
+            </div><!-- #main -->
+
+            <footer id = 'footer' class = "navbar-fixed-bottom">
                 <div class = 'container'>
                     <div class = 'footer-info row'>
                         <div class = 'col-xs-4 col-sm-4 col-md-2'>

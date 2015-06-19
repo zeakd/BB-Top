@@ -57,8 +57,331 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+ul {
+  list-style : none;
+  padding-left: 0;
+}
+body {
+  font: 'Apple SD Gothic Neo', NanumBarunGothic, '나눔고딕', 'NG', 'Malgun Gothic', dotum, sans-serif;
+  background-color: #B3AFA6;
+}
+
+@banner-xs-height:               240px;
+@banner-sm-height:               300px;
+@banner-md-height:               400px;
+@banner-lg-height:               450px;
+
+@banner-area-xs-height:          @banner-xs-height+@navbar-header-height;
+@banner-area-sm-height:          @banner-sm-height+@navbar-header-height;
+@banner-area-md-height:          @banner-md-height+@navbar-header-height;
+@banner-area-lg-height:          @banner-lg-height+@navbar-header-height;
+
+@paper-color:                    white;
+@paper-xs-padding-top:           0px;
+@paper-sm-padding-top:           50px;
+@paper-md-padding-top:           80px;
+@paper-lg-padding-top:           90px;
+
+@news-item-xs-height:            180px;
+@news-item-sm-height:            180px;
+@news-item-md-height:            180px;
+@news-item-lg-height:            250px;
+
+@bulletin-item-xs-height:        180px;
+@bulletin-item-sm-height:        180px;
+@bulletin-item-md-height:        180px;
+@bulletin-item-lg-height:        220px;
+
+.cover {
+  top : -9999px;
+  bottom : -9999px;
+  left : -9999px;
+  right : -9999px;
+  margin: auto;
+  position: absolute;
+}
+.container, .container-fluid{
+  padding-left : 0;
+  padding-right : 0;
+}
+.header {
+  font-weight: 100;
+  -webkit-transition: all 0.5s ease, opacity 0.3s ease;
+  -moz-transition: all 0.5s ease, opacity 0.3s ease;
+  -o-transition: all 0.5s ease, opacity 0.3s ease;
+  transition: all 0.5s ease, opacity 0.3s ease;
+}
+.header .logo {
+  -webkit-transition: all 0.5s ease, opacity 0.3s ease;
+  -moz-transition: all 0.5s ease, opacity 0.3s ease;
+  -o-transition: all 0.5s ease, opacity 0.3s ease;
+  transition: all 0.5s ease, opacity 0.3s ease;
+  position: absolute;
+}
+#banner {
+  z-index: @zindex-banner;
+
+  height : @banner-xs-height;
+  top : @navbar-header-height;
+  position : fixed;
+
+  width :100%;
+  .bg {
+    height: 100%;
+    //width : auto;
+  }
+  .text{
+    height : 100%;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    height : @banner-sm-height;
+
+  }
+  @media (min-width: @screen-md-min) {
+    height : @banner-md-height;
+  }
+  @media (min-width: @screen-lg-min) {
+    height : @banner-lg-height;
+    .bg {
+      width: 100%;
+      height : auto;
+    }
+  }
+}
+#banner-area {
+  height : @banner-area-xs-height;
+  @media (min-width: @screen-sm-min) {
+    height : @banner-area-sm-height;
+  }
+  @media (min-width: @screen-md-min) {
+    height : @banner-area-md-height;
+  }
+  @media (min-width: @screen-lg-min) {
+    height : @banner-area-lg-height;
+  }
+}
+
+#paper {
+  z-index: @zindex-paper;
+  position: relative;
+  background-color : @paper-color;
+
+  /* row 가 삐져나온다 */
+  overflow: hidden;
+
+  padding-top: @paper-xs-padding-top;
+  @media (min-width: @screen-sm-min) {
+    padding-top: @paper-sm-padding-top;
+  }
+  @media (min-width: @screen-md-min) {
+    padding-top: @paper-md-padding-top;
+  }
+  @media (min-width: @screen-lg-min) {
+    padding-top: @paper-lg-padding-top;
+  }
+}
+
+#news,
+#hole,
+#bulletin
+#insta{
+  position : relative;
+}
+#news {
+  .news-item {
+    position: relative;
+    overflow: hidden;
+    height : @news-item-xs-height;
+    display: block;
+    .bg {
+      //height: 100%;
+      width : 100%;
+    }
+    @media (min-width: @screen-sm-min) {
+      height : @news-item-sm-height;
+      .bg {
+        height: 100%;
+        width : auto;
+      }
+    }
+    @media (min-width: @screen-md-min) {
+      height : @news-item-md-height;
+    }
+    @media (min-width: @screen-lg-min) {
+      height : @news-item-lg-height;
+    }
+  }
+  .text-wrapper {
+    position: relative;
+    box-sizing: border-box;
+    width : 100%;
+    height : 100%;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom : 0;
+    padding: 0 10px;
+
+    -webkit-transition: all 0.3s ease, opacity 0.3s ease;
+       -moz-transition: all 0.3s ease, opacity 0.3s ease;
+         -o-transition: all 0.3s ease, opacity 0.3s ease;
+            transition: all 0.3s ease, opacity 0.3s ease;
+
+    background-color: rgba(70,70,70, 0.7);
+
+    .text{
+      height : 30%;
+      @media (min-width: @screen-sm-min) {
+        height: 20%;
+      }
+    }
+  }
+}
+#hole {
+  /* do not padding-top. it cause crack. */
+  margin-top : 50px;
+  overflow: hidden;
+  .hole-text {
+    position: relative;
+    width : 100%;
+  }
+  .hole-bg{
+    position: absolute;
+    overflow: hidden;
+
+    width : 100%;
+    /*		height : 900px;*/
+    top : 0;
+
+    > img{
+      top : 0;
+      width : 100%;
+      position: relative;
+    }
+  }
+}
+#bulletin {
+  padding-top: 50px;
+  .bulletin-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-top : 10px;
+    margin-bottom: 10px;
+    height : @bulletin-item-xs-height;
+
+    background-size: cover;
+    .text-wrapper {
+      &:hover {
+        background-color: rgba(0,0,0, 0.7);
+      }
+      width : 100%;
+      height : 100%;
+      -webkit-transition: all 0.3s ease, opacity 0.3s ease;
+      -moz-transition: all 0.3s ease, opacity 0.3s ease;
+      -o-transition: all 0.3s ease, opacity 0.3s ease;
+      transition: all 0.3s ease, opacity 0.3s ease;
+      background-color: rgba(70,70,70, 0.7);
+    }
+    .text{
+      height : 40%;
+    }
+    @media (max-width: @screen-xs-max) {
+        margin : 0;
+    }
+    @media (min-width: @screen-sm-min) {
+      height : @bulletin-item-sm-height;
+    }
+    @media (min-width: @screen-md-min) {
+      height : @bulletin-item-md-height;
+    }
+    @media (min-width: @screen-lg-min) {
+      height : @bulletin-item-lg-height;
+    }
+  }
+  /*
+      .bulletin-item > img {
+          width : 100%;
+      }
+  */
+  @media (max-width: @screen-xs-max) {
+    .col-xs-6 {
+      padding: 0;
+    }
+  }
+}
+/* #insta start */
+
+#insta {
+  &.container,
+  &.container-fluid {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  font: 12px/26px BebasNeue;
+  margin-top: 60px;
+  position : relative;
+  min-height : 300px;
+
+  list-style: none;
+  margin-bottom: 150px;
+  .loading {
+    position: absolute;
+    top:0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+  }
+  h1,
+  h2,
+  h3{
+    margin-right: 0.5em;
+    display: inline-block;
+    font-weight: bold;
+  }
+  .row {
+    margin-left : -5px;
+    margin-right : -5px;
+  }
+  .col-md-1,
+  .col-md-2,
+  .col-xs-2,
+  .col-xs-4{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .insta-item {
+    display: inline-block;
+    margin-bottom: 10px;
+    /*		width : 100px;	*/
+    > img {
+      width : 100%;
+    }
+  }
+
+  /*
+      .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
 
 
+      #insta .col-md-1, .col-md-10, .col-md-11, .col-md-12,
+      #insta .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12,
+      #insta .col-xs-2, .col-xs-3,
+      #insta .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+  */
+
+
+  /*
+      .insta-item.big {
+          width : 400px;
+      }
+      .insta-item.small {
+          width : 200px;
+      }
+  */
+}
 
 /* footer #footer start */
 #footer {
@@ -66,7 +389,6 @@ textarea {
   color : white;
   background-image: none;
   background-color: #B3AFA6;
-  -webkit-transform: translate3d(0,0,0);
 }
 #footer,
 #footer-area {
@@ -203,30 +525,6 @@ textarea {
   }
 }
 
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-
-}
-
-@media print,
-(-o-min-device-pixel-ratio: 5/4),
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi) {
-
-}
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -273,68 +571,4 @@ textarea {
 
 .clearfix {
   *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
 }
